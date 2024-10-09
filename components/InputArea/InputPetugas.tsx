@@ -14,6 +14,7 @@ export default function InputPetugas() {
           id="nama_petugas"
           className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           placeholder="Nama Petugas"
+          required
         />
       </div>
 
@@ -30,6 +31,7 @@ export default function InputPetugas() {
           id="jabatan"
           className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           placeholder="jabatan"
+          required
         />
       </div>
     </>

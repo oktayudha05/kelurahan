@@ -12,37 +12,37 @@ export default function Home() {
           <div className="absolute inset-0 flex flex-col justify-center items-center space-y-4">
             <Link
               href="/form-domisili"
-              className="w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
+              className="w-4/5 md:w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
             >
               Surat Keterangan Domisili
             </Link>
             <Link
               href="/form-pengantar"
-              className="w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
+              className="w-4/5 md:w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
             >
               Surat Pengantar
             </Link>
             <Link
-              href="/catatan-kepolisian"
-              className="w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
+              href="/form-kepolisian"
+              className="w-4/5 md:w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
             >
               Surat Pengantar Catatan Kepolisian
             </Link>
             <Link
               href="/form-usaha"
-              className="w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
+              className="w-4/5 md:w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
             >
               Surat Keterangan Usaha
             </Link>
             <Link
-              href="src/sktm/sktm.html"
-              className="w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
+              href="/form-sktm"
+              className="w-4/5 md:w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
             >
               Surat Keterangan Tidak Mampu
             </Link>
             <Link
-              href="https://6ft71xh4-5000.asse.devtunnels.ms/document"
-              className="w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
+              href="/document"
+              className="w-4/5 md:w-96 py-3 font-bold text-center text-black bg-indigo-50 rounded-full shadow-md"
             >
               Lihat Dokumen
             </Link>

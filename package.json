@@ -9,19 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "mongoose": "^8.7.0",
+    "multer": "^1.4.5-lts.1",
     "next": "14.2.13",
+    "next-auth": "^4.24.8",
+    "nodemon": "^3.1.7",
     "pdf-lib": "^1.17.1",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/file-saver": "^2.0.7",
+    "@types/multer": "^1.4.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.13",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
   }
 }
