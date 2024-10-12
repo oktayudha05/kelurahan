@@ -4,7 +4,7 @@ import dbConnect from "@/libs/mongodb";
 import Admin from "@/schema/adminSchema";
 import bcrypt from "bcryptjs";
 
-export const authOptions = {
+const handler = NextAuth({
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -31,18 +31,11 @@ export const authOptions = {
     signIn: "/login",
   },
   session: {
-    strategy: "jwt" as const,
+    strategy: "jwt",
     maxAge: 30 * 60,
     updateAge: 24 * 60 * 60,
   },
   secret: process.env.NEXTAUTH_SECRET,
+});
 
-  callbacks: {
-    async redirect() {
-      return "/document";
-    },
-  },
-};
-
-export const GET = NextAuth(authOptions);
-export const POST = NextAuth(authOptions);
+export { handler as GET, handler as POST };

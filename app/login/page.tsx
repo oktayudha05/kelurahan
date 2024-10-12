@@ -2,31 +2,21 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import HomeButton from "@/components/HomeButton";
 import Link from "next/link";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const res = await signIn("credentials", {
-      redirect: false,
+    await signIn("credentials", {
+      redirect: true,
+      callbackUrl: "/document",
       username,
       password,
     });
-
-    if (res?.error) {
-      setError(res.error);
-      console.error("Login error:", error);
-    } else {
-      router.push("/document");
-    }
   };
 
   return (

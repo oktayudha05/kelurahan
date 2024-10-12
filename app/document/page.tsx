@@ -1,8 +1,10 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import HomeButton from "@/components/HomeButton";
 import LogoutButton from "@/components/LogoutButton";
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
 
 export default function Document() {
   interface PdfDocument {
@@ -41,10 +43,19 @@ export default function Document() {
           <HomeButton />
           <LogoutButton />
         </div>
-        <h1 className="text-2xl font-semibold text-center mb-6 text-gray-800 pt-2">
-          Daftar Dokumen
-        </h1>
-
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-semibold mb-6 text-center text-gray-800 pt-2 flex-1">
+            Daftar Dokumen
+          </h1>
+          <button
+            className="ml-4 p-2 bg-blue-500 text-white text-end rounded-full shadow hover:bg-blue-600"
+            onClick={fetchPdfDocuments}
+            aria-label="Refresh"
+            title="Refresh"
+          >
+            <ArrowPathIcon className="h-3 w-3" />
+          </button>
+        </div>
         {loading ? (
           <div className="flex justify-center items-center h-96">
             <p className="text-lg font-semibold text-gray-600">Loading...</p>
