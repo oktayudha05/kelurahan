@@ -19,7 +19,14 @@ const fillPDF = async (
   pekerjaan: string,
   alamat: string,
   rt: string,
-  tanggal: string
+  tanggal: string,
+  noReg: string,
+  agama: string,
+  perkawinan: string,
+  keperluan: string,
+  ketLain: string,
+  namaPetugas: string,
+  buktiDiri: string
 ) => {
   const { PDFDocument, rgb } = PDFLib;
   const domain = process.env.URL;
@@ -35,8 +42,19 @@ const fillPDF = async (
     form.getTextField("jk").setText(jenisKelamin);
     form.getTextField("ttl").setText(lahir);
     form.getTextField("warganegara").setText(warganegara);
+    form.getTextField("agama").setText(agama);
     form.getTextField("pekerjaan").setText(pekerjaan);
+    form.getTextField("kawin").setText(perkawinan);
+    form.getTextField("tinggal").setText(alamat);
+    form.getTextField("bukti_diri").setText(buktiDiri);
+    form.getTextField("keperluan").setText(keperluan);
+    form.getTextField("ketLain").setText(ketLain);
+    form.getTextField("berlaku").setText("1 Bulan sejak surat dikeluarkan");
     form.getTextField("tanggal").setText(tanggal);
+    form.getTextField("no_reg").setText(noReg);
+    form.getTextField("tanggal_surat").setText(tanggal);
+    form.getTextField("nama_pemohon").setText(namaLengkap);
+    form.getTextField("nama_camat").setText(namaPetugas);
   } catch (error) {
     console.error("Error filling PDF fields:", error);
     throw new Error("Error filling PDF fields");
@@ -67,6 +85,10 @@ export async function handleSubmit(formData: FormData): Promise<Uint8Array> {
   const alamat = toTitleCase(formData.get("alamat") as string);
   let rt = formData.get("rt") as string;
   let rw = formData.get("rw") as string;
+  const noReg = formData.get("no_reg") as string;
+  const keperluan = toTitleCase(formData.get("keperluan") as string);
+  const ketLain = toTitleCase(formData.get("keterangan_lain") as string);
+  const buktiDiri = toTitleCase(formData.get("bukti_diri") as string);
 
   if (rt.length === 1) {
     rt = `0${rt}`;
@@ -92,7 +114,14 @@ export async function handleSubmit(formData: FormData): Promise<Uint8Array> {
     pekerjaan,
     alamat,
     rt,
-    tanggal
+    tanggal,
+    noReg,
+    agama,
+    perkawinan,
+    keperluan,
+    ketLain,
+    namaPetugas,
+    buktiDiri
   );
 
   // Simpan PDF ke MongoDB

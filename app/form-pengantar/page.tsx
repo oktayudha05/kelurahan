@@ -31,7 +31,11 @@ export default function FormPengantar() {
         <form action={formSubmit}>
           <NoDocument />
           <InputPetugas />
-          <InputUser />
+          <InputUser
+            showBuktiDiri={true}
+            showKeteranganLain={true}
+            showNoReg={true}
+          />
           <SubmitButton />
         </form>
       </div>

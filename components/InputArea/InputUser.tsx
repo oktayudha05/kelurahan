@@ -1,4 +1,6 @@
 export default function InputUser({
+  showBuktiDiri = false,
+  showKeteranganLain = false,
   showNoReg = false,
   showNamaLengkap = true,
   showJenisKelamin = true,
@@ -17,6 +19,44 @@ export default function InputUser({
 }) {
   return (
     <>
+      {showBuktiDiri && (
+        <div className="mb-4">
+          <label
+            htmlFor="bukti_diri"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Bukti Diri
+          </label>
+          <select
+            id="bukti_diri"
+            name="bukti_diri"
+            defaultValue="-"
+            className="mt-1 text-gray-500 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          >
+            <option value="tidak terlampir">Tidak terlampir</option>
+            <option value="terlampir">Terlampir</option>
+          </select>
+        </div>
+      )}
+
+      {showKeteranganLain && (
+        <div className="mb-4">
+          <label
+            htmlFor="keterangan_lain"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Keterangan Lain
+          </label>
+          <input
+            id="keterangan_lain"
+            name="keterangan_lain"
+            type="text"
+            className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Keterangan Lain"
+          />
+        </div>
+      )}
+
       {showNoReg && (
         <div className="mb-4">
           <label
