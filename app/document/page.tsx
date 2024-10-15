@@ -18,7 +18,13 @@ export default function Document() {
 
   const fetchPdfDocuments = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/documents`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/documents`, {
+        method: "GET",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
+      });
+      // const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/documents`);
       const data = await res.json();
       setPdfs(data);
     } catch (error) {
